@@ -7,6 +7,7 @@ import lombok.*;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-public class Pieza {
-
+public class Tablero {
+    private int id;
+    private int[][] tablero;
 }
