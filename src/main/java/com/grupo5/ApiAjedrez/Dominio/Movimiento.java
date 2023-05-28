@@ -7,7 +7,7 @@ import lombok.*;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-public class Movimientos {
+public class Movimiento {
     private int id;
     private String casillaAnterior;
     private String casillaNueva;
