@@ -8,10 +8,11 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Partida {
-    private int[][] tablero;
+    int id;
+    private Tablero tablero;
     // private IEstado estado;
     int turno;
-    int noTurno;
+    int turnoOponente;
     int contenidoPosVieja;
     int contenidoPosActual;
 }

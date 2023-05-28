@@ -13,8 +13,8 @@ public class TableroController {
     public TableroController(TableroService tableroService){ this.tableroService = tableroService; }
 
     @PostMapping("/crear/tablero")
-    Tablero createTablero(@RequestBody Tablero Tablero){
-        return tableroService.createTablero(Tablero);
+    Tablero createTablero(@RequestBody Tablero tablero){
+        return tableroService.createTablero(tablero);
     }
 
     @GetMapping("/buscar/tablero/{id}")
