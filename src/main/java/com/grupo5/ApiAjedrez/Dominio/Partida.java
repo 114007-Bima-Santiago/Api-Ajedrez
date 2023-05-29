@@ -1,4 +1,4 @@
 package com.grupo5.ApiAjedrez.Dominio;
 
-public class Pieza {
+public class Partida {
 }
