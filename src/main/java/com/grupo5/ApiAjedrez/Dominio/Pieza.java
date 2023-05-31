@@ -8,8 +8,8 @@ import lombok.*;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-public class Tablero {
+public class Pieza {
     private int id;
-    private int[][] tablero;
+    private TipoPieza tipo;
 
 }

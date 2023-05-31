@@ -1,6 +1,5 @@
 package com.grupo5.ApiAjedrez.Dominio;
 
-
 import lombok.*;
 
 @Getter
@@ -8,8 +7,9 @@ import lombok.*;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-public class Tablero {
+public class Movimiento {
     private int id;
-    private int[][] tablero;
-
+    private String casillaAnterior;
+    private String casillaNueva;
+    private Pieza pieza;
 }
