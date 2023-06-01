@@ -2,9 +2,11 @@ package com.grupo5.ApiAjedrez.Services;
 
 import com.grupo5.ApiAjedrez.Dominio.Partida;
 
+import java.util.List;
+
 public interface PartidaService {
-    Partida createPartida(Partida partida);
-    Partida getPartidaById(Integer id);
-    Partida updatePartida(Integer id, Partida partida);
-    Partida deletePartida(Integer id);
+    Partida getPartidaById(int id);
+    List<Partida> getPartidas();
+    boolean actualizarCrearPartida();
+    boolean elminarPartidaById(int id);
 }
