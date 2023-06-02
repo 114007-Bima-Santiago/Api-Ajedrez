@@ -1,5 +1,6 @@
 package com.grupo5.ApiAjedrez.Dominio;
 
+
 import lombok.*;
 
 @Getter

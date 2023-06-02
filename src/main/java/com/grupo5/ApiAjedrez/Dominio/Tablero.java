@@ -1,5 +1,6 @@
 package com.grupo5.ApiAjedrez.Dominio;
 
+
 import lombok.*;
 
 @Getter
@@ -10,4 +11,5 @@ import lombok.*;
 public class Tablero {
     private int id;
     private int[][] tablero;
+
 }

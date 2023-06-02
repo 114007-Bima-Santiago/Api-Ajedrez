@@ -1,16 +1,18 @@
 package com.grupo5.ApiAjedrez.Dominio;
 
-import lombok.*;
 
+import lombok.*;
 import java.util.List;
 
 @Getter
 @Setter
 @ToString
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 public class Partida {
     private int id;
+    private Jugador jugadorBlancas;
+    private Jugador jugadorNegras;
     private Tablero tablero;
     private Estado estado;
     private int turno;

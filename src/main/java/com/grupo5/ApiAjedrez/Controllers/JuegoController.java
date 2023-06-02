@@ -1,34 +1,26 @@
 package com.grupo5.ApiAjedrez.Controllers;
-
 import com.grupo5.ApiAjedrez.Dominio.Partida;
-import com.grupo5.ApiAjedrez.Services.PartidaService;
+import com.grupo5.ApiAjedrez.Dto.Touch;
+import com.grupo5.ApiAjedrez.Juego;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class JuegoController {
-    private final PartidaService partidaService;
+    private Juego juego;
 
     @Autowired
-    public JuegoController(PartidaService partidaService){ this.partidaService = partidaService; }
+    public JuegoController(){  }
 
-    @PostMapping("/crear/partida")
-    Partida createPartida(@RequestBody Partida partida){
-        return partidaService.createPartida(partida);
+    @GetMapping("obtener/touch")
+    public Touch getTouch(){
+        juego = Juego.obtenerInstancia();
+        return juego.mov();
     }
 
-    @GetMapping("/buscar/partida/{id}")
-    Partida getPartidaById(@PathVariable Integer id){
-        return partidaService.getPartidaById(id);
-    }
-
-    @PutMapping("/actualizar/tablero/{id}")
-    Partida updatePartida(@PathVariable Integer id, @RequestBody Partida partida){
-        return partidaService.updatePartida(id, partida);
-    }
-
-    @DeleteMapping("/eliminar/partida/{id}")
-    Partida eliminarPartida(@PathVariable Integer id){
-        return  partidaService.deletePartida(id);
+    @GetMapping("nueva-partida/{idJB}/{idJN}")
+    public Partida getPartida(@PathVariable int idJB, @PathVariable int idJN){
+        this.juego = Juego.crearInstancia();
+        return juego.getPartida(idJB, idJN);
     }
 }
