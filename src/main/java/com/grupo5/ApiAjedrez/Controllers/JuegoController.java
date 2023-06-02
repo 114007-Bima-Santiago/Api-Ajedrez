@@ -1,17 +1,16 @@
 package com.grupo5.ApiAjedrez.Controllers;
 
 import com.grupo5.ApiAjedrez.Dominio.Partida;
-import com.grupo5.ApiAjedrez.Dominio.Tablero;
 import com.grupo5.ApiAjedrez.Services.PartidaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-public class PartidaController {
+public class JuegoController {
     private final PartidaService partidaService;
 
     @Autowired
-    public PartidaController(PartidaService partidaService){ this.partidaService = partidaService; }
+    public JuegoController(PartidaService partidaService){ this.partidaService = partidaService; }
 
     @PostMapping("/crear/partida")
     Partida createPartida(@RequestBody Partida partida){
