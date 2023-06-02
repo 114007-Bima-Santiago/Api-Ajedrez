@@ -1,5 +1,6 @@
 package com.grupo5.ApiAjedrez;
 
+import com.grupo5.ApiAjedrez.Dominio.Coordenada;
 import com.grupo5.ApiAjedrez.Dominio.Estado;
 import com.grupo5.ApiAjedrez.Dominio.Jugador;
 import com.grupo5.ApiAjedrez.Dominio.Partida;
@@ -30,7 +31,7 @@ public class Juego {
         return partida;
     }
 
-    public Touch mov(){
+    public Touch mov(Coordenada casillaAntigua, Coordenada casillaNueva){
         return null;
     }
 
@@ -38,6 +39,9 @@ public class Juego {
         Partida partida = new Partida();
         partida.setJugadorBlancas(getJugador(idJB));
         partida.setJugadorNegras(getJugador(idJN));
+        partida.setEstado(Estado.EN_CURSO);
+        partida.setTurno(getJugador(idJB));
+        partida
         return partida;
     }
 

@@ -13,8 +13,8 @@ public class JuegoController {
     @Autowired
     public JuegoController(){  }
 
-    @GetMapping("obtener/touch/{fA}{cA}-{fN}{cN}")
-    public Touch getTouch(@PathVariable int fA, @PathVariable int cA, @PathVariable int fN, @PathVariable int cN){
+    @GetMapping("obtener/touch")
+    public Touch getTouch(@RequestBody int fA, @RequestBody int cA, @RequestBody int fN, @RequestBody int cN){
         juego = Juego.obtenerInstancia();
         Coordenada casillaAntigua = new Coordenada(fA, cA);
         Coordenada casillaNueva = new Coordenada(fN, cN);
