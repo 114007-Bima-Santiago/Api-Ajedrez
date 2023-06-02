@@ -1,4 +1,7 @@
-package com.grupo5.ApiAjedrez.REpositories;
+package com.grupo5.ApiAjedrez.Repositories;
 
-public interface JugadoresJpaRepositories {
+import com.grupo5.ApiAjedrez.Dominio.Jugador;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface JugadoresJpaRepositories extends JpaRepository<Jugador, Long> {
 }
