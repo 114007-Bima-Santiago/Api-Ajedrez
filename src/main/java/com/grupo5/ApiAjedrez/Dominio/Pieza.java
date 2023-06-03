@@ -11,14 +11,13 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public abstract class Pieza {
-    private int id;
-    public List<int[]> movPosibles(int[][] tablero, int[] posicion) {
+    public List<Coordenada> movPosibles(int[][] tablero, Coordenada posicion) {
         return null;
     }
 
-    public void borrarPosibles(int[][] tablero, List<int[]> movimientosPosibles){
-        for(int[] movimientoPosible : movimientosPosibles){
-            tablero[movimientoPosible[0]][movimientoPosible[1]] -= 100;
+    public void borrarPosibles(int[][] tablero, List<Coordenada> movimientosPosibles){
+        for(Coordenada movimientoPosible : movimientosPosibles){
+            tablero[movimientoPosible.getColumna()][movimientoPosible.getFila()] -= 100;
         }
 
     }
