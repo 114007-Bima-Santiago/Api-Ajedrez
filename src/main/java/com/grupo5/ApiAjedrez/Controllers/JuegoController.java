@@ -13,12 +13,12 @@ public class JuegoController {
     @Autowired
     public JuegoController(){  }
 
-    @GetMapping("obtener/touch")
-    public Touch getTouch(@RequestBody int fA, @RequestBody int cA, @RequestBody int fN, @RequestBody int cN){
+    @GetMapping("obtener/touch/{podicion}")
+    public Touch getTouch(@PathVariable String posicion){
         juego = Juego.obtenerInstancia();
-        Coordenada casillaAntigua = new Coordenada(fA, cA);
-        Coordenada casillaNueva = new Coordenada(fN, cN);
-        return juego.mov(casillaAntigua, casillaNueva);
+        Coordenada coord = new Coordenada();
+        coord.transformarACoordenada(posicion);
+        return juego.mov(coord);
     }
 
     @GetMapping("nueva-partida/{idJB}/{idJN}")

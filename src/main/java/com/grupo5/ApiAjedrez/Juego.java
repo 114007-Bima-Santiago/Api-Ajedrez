@@ -31,7 +31,7 @@ public class Juego {
         return partida;
     }
 
-    public Touch mov(Coordenada casillaAntigua, Coordenada casillaNueva){
+    public Touch mov(Coordenada coord){
         return null;
     }
 
@@ -40,8 +40,8 @@ public class Juego {
         partida.setJugadorBlancas(getJugador(idJB));
         partida.setJugadorNegras(getJugador(idJN));
         partida.setEstado(Estado.EN_CURSO);
-        partida.setTurno(getJugador(idJB));
-        partida
+        //TODO: ver si se cambia el id por un codigo ej: 1 o 2
+        partida.setTurno(idJB);
         return partida;
     }
 
