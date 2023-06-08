@@ -85,6 +85,7 @@ public class Partida implements Serializable {
             movimiento(posVieja, coord);
             segundoTouch = false;
             cambiarTurno();
+            //TODO: agregar un metodo para guardar el movimiento en la lista de movimientos para subirla a la base de datos en caso de necesitarse
             return new Touch(2);
         } else {
             return new Touch(3);
