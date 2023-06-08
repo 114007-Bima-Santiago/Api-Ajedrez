@@ -7,10 +7,15 @@ import com.grupo5.ApiAjedrez.Dominio.Partida;
 import com.grupo5.ApiAjedrez.Dto.Touch;
 import com.grupo5.ApiAjedrez.Services.JugadorService;
 import com.grupo5.ApiAjedrez.Services.Impl.JugadorServiceImpl;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 public class Juego {
 
     static Juego instancia;
+    private Partida partida;
 
     public static Juego crearInstancia(){
         instancia = new Juego();
@@ -21,19 +26,12 @@ public class Juego {
         return instancia;
     }
 
-    private Partida partida;
-    private Estado estado;
-    private int turnoOponente;
-    private int contenidoPosVieja;
-    private int contenidoPosActual;
-
-    public Partida getPartida() {
-        return partida;
-    }
 
     public Touch mov(Coordenada coord){
-        return null;
+        return partida.getTouch(coord);
     }
+
+
 
     public Partida getPartida(int idJB, int idJN){
         Partida partida = new Partida();

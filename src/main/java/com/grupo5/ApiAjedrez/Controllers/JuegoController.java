@@ -17,6 +17,7 @@ public class JuegoController {
     public Touch getTouch(@PathVariable String posicion){
         juego = Juego.obtenerInstancia();
         Coordenada coord = new Coordenada();
+        coord.setNombre(posicion);
         coord.transformarACoordenada(posicion);
         return juego.mov(coord);
     }
