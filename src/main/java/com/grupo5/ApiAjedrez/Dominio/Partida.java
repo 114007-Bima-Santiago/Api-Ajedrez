@@ -46,6 +46,8 @@ public class Partida implements Serializable {
 
     private static List<String> movimientosPosibles;
     private static Coordenada posVieja;
+    private Jaque jaqueController;
+    private JaqueMate jMateController;
 
     public Touch getTouch(Coordenada coord){
         int contenidoEscaque = getContenidoEscaque(coord);
@@ -76,6 +78,7 @@ public class Partida implements Serializable {
                     break;
             }
 
+            //TODO: implementar un metodo para que revise si se esta en jaque, jaque mate etc
             movimientosPosibles = pieza.movPosibles(tablero.getTablero(), coord);
             posVieja = coord;
             segundoTouch = true;
