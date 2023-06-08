@@ -14,9 +14,10 @@ import java.util.List;
 @AllArgsConstructor
 public class Peon extends Pieza {
     @Override
-    public List<Coordenada> movPosibles(int[][] tablero, Coordenada posicion){
-        List<Coordenada> movimientosPosibles = new ArrayList<>();
-        Coordenada movimientoPosible;
+    public List<String> movPosibles(int[][] tablero, Coordenada posicion){
+        List<String> movimientosPosibles = new ArrayList<>();
+        String movimientoPosible;
+        posicion.transformarANotacion();
         int c = posicion.getColumna();
         int r = posicion.getFila();
         int pasos;
@@ -32,7 +33,7 @@ public class Peon extends Pieza {
                 r++;
                 if(tablero[c][r] == 0){
                     tablero[c][r] += 100;
-                    movimientoPosible = new Coordenada(r, c);
+                    movimientoPosible = posicion.getNombre();
                     movimientosPosibles.add(movimientoPosible);
                     pasos--;
                 }
@@ -43,7 +44,7 @@ public class Peon extends Pieza {
             for(int i = 0; i < 2; i++){
                 if(tablero[c][r] / 10 == 3 && tablero[c][r] != 1){
                     tablero[c][r] += 100;
-                    movimientoPosible = new Coordenada(r, c);
+                    movimientoPosible = posicion.getNombre();
                     movimientosPosibles.add(movimientoPosible);
                 }
                 c -= 2;
@@ -57,7 +58,7 @@ public class Peon extends Pieza {
                 r--;
                 if(tablero[c][r] == 0){
                     tablero[c][r] += 100;
-                    movimientoPosible = new Coordenada(r, c);
+                    movimientoPosible = posicion.getNombre();
                     movimientosPosibles.add(movimientoPosible);
                     pasos--;
                 }
@@ -68,7 +69,7 @@ public class Peon extends Pieza {
             for(int i = 0; i < 2; i++){
                 if(tablero[c][r] / 10 == 2 && tablero[c][r] != 1){
                     tablero[c][r] += 100;
-                    movimientoPosible = new Coordenada(r, c);
+                    movimientoPosible = posicion.getNombre();
                     movimientosPosibles.add(movimientoPosible);
                 }
                 c += 2;

@@ -11,7 +11,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public abstract class Pieza {
-    public List<Coordenada> movPosibles(int[][] tablero, Coordenada posicion) {
+    public List<String> movPosibles(int[][] tablero, Coordenada posicion) {
         return null;
     }
 
